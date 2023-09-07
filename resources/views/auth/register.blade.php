@@ -25,6 +25,14 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+            <div class="mt-4">
+                <x-label for="role" :value="__('role')" />
+                <!-- Bootstrap Dropdown -->
+                <select class="form-control" id="roleDropdown" name="role">
+                    <option value="1">Doctor</option>
+                    <option value="2">Patient</option>
+                </select>
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
