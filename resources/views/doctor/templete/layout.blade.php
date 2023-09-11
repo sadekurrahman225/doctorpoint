@@ -29,13 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{ url('doctors-list') }}">
+          <a class="nav-link" href="{{ url('patient-list') }}">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Doctors List</span>
+            <span class="nav-link-text">Patients List</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="{{ url('appointment-list') }}">
+          <a class="nav-link" href="{{ url('d-appointment-list') }}">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Appointments</span>
           </a>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\patient;
+
 use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
@@ -8,8 +9,10 @@ use Illuminate\Http\Request;
 
 class DoctorListController extends Controller
 {
-    function show(){
-        $results = DB::select("SELECT * FROM user WHERE role = 1");
+    function show()
+    {
+        //dd(5);
+        $results = DB::select("SELECT * FROM users WHERE role = 1");
 
 
 
@@ -20,8 +23,10 @@ class DoctorListController extends Controller
     }
 
 
-    function get_appintment($id){
-        $patient_id = session('user_id');
+    function get_appintment($id)
+    {
+        //dd(5);
+        $patient_id = auth()->user()->id;
         $doctor_id = $id;
 
         DB::insert("INSERT INTO appointments (doctor_id, patient_id,status) VALUES ($doctor_id,$patient_id,1)");
@@ -29,7 +34,12 @@ class DoctorListController extends Controller
         return view('patient.dashboard');
     }
 
-    function doctor_profile(){
 
+
+
+
+
+    function doctor_profile()
+    {
     }
 }

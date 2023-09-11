@@ -7,7 +7,7 @@
             <div class="grid_10">
                 <div class="card mb-3">
                     <div class="card-header">
-                        Available Doctors</div>
+                        Registered Patients</div>
                     <div class="card-body">
                         <div class="card-body">
                             <div class="block">  
@@ -20,8 +20,8 @@
                                       <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Depertment</th>
-                                        <th scope="col">Action</th>
+                                        {{-- <th scope="col">Depertment</th>
+                                        <th scope="col">Action</th> --}}
                                         <th scope="col">Details</th>
                                       </tr>
                                     </thead>
@@ -32,8 +32,8 @@
                                         <tr class="odd gradeX">
                                             <th scope="row">{{$i}}</th>
                                             <td>{{$row->name}}</td>
-                                            <td>Medicine</td>
-                                            <td><a href="{{url('get_appintment',$row->id)}}">Get Appointment</a> </td>
+                                            {{-- <td>Medicine</td>
+                                            <td><a href="{{url('get_appintment',$row->id)}}">Get Appointment</a> </td> --}}
                                             {{-- <td>Win 95+</td>
                                             <td class="center"> 4</td> --}}
                                             <td><a href="{{url('doctor_profile',$row->id)}}">View Profile</a></td>
