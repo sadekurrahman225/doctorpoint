@@ -23,7 +23,7 @@
                                         <th scope="col">Depertment</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Action</th>
-                                        <th scope="col">Details</th>
+                                        {{-- <th scope="col">Details</th> --}}
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -43,7 +43,7 @@
                                             
                                             {{-- <td>Win 95+</td>
                                             <td class="center"> 4</td> --}}
-                                            <td><a href="{{url('doctor_profile',$row->id)}}">View Profile</a></td>
+                                            {{-- <td><a href="{{url('doctor_profile',$row->id)}}">View Profile</a></td> --}}
                                         </tr>
                                         <?php $i++  ?>
                                         @endforeach

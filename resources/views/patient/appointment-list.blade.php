@@ -19,6 +19,9 @@
                                       <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Date</th>
+
+                                        <th scope="col">Prescription</th>
                                         <th scope="col">Status</th>
                                        
                                       </tr>
@@ -30,6 +33,7 @@
                                             1 => "Pending",
                                             2 => "Confirmed",
                                             3 => "Visited",
+                                            4 => "Cancelled",
                                         ] 
                                    
                                    ?>
@@ -37,6 +41,12 @@
                                     <tr class="odd gradeX">
                                         <td>{{$i}}</td>
                                         <td>{{$doctor_name[$row->doctor_id]}}</td>
+                                        <td>{{$row->date}}</td>
+                                        @if ($row->status==3)
+                                        <td>{{$row->prescription}}</td>
+                                       @else
+                                        <td></td>
+                                        @endif
                                         <td>{{$status[$row->status]}}</td>
                                         <td class="center"> </td>
                                         {{-- <td><a href="{{url('get_appintment',$row->id)}}">Get Appointment</a> || <a href="{{url('doctor_profile',$row->id)}}">View Profile</a></td> --}}

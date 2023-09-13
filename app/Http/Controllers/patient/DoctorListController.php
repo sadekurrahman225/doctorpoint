@@ -41,7 +41,15 @@ class DoctorListController extends Controller
 
 
 
-    function doctor_profile()
+    function p_report()
     {
+        $patient_id = auth()->user()->id;
+        $results = DB::select("SELECT * FROM appointments WHERE patient_id = $patient_id and status in( 2,3) order by ID DESC");
+        $doctors  = DB::select("SELECT * FROM users");
+        $doctor_name = array();
+        foreach ($doctors as $row) {
+            $doctor_name[$row->id] = $row->name;
+        }
+        return view('patient.report', compact('results', 'doctor_name'));
     }
 }
