@@ -1,4 +1,4 @@
-@extends('patient.templete.layout')
+@extends('doctor.templete.layout')
 
 @section('main_page')
 <div class="content-wrapper">
