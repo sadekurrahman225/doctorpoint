@@ -5,6 +5,7 @@ use App\Http\Controllers\patient\AppointmentListController;
 use App\Http\Controllers\patient\DoctorListController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/run', function () {
+    Artisan::call('npm install'); // Replace 'your:cli-command' with the actual CLI command you want to run
+    return 'CLI command executed successfully';
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,7 +39,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/doctors-list', [DoctorListController::class, 'show'])->name('doctors-list');
 Route::get('/appointment-list', [AppointmentListController::class, 'show'])->name('appointment-list');
-Route::get('/get_appintment/{id}', [DoctorListController::class, 'get_appintment'])->name('appointment-list');
+Route::get('/get_appintment', [DoctorListController::class, 'get_appintment'])->name('appointment-list');
 
 Route::get('/patient-list', [PatientController::class, 'show'])->name('patient-list');
 Route::get('/d-appointment-list', [PatientController::class, 'appointments'])->name('d-appointment-list');

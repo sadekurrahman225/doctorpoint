@@ -21,7 +21,7 @@ class PatientController extends Controller
         //dd(5);
         $doctor_id = auth()->user()->id;
         //dd($patient_id);
-        $results = DB::select("SELECT * FROM appointments WHERE doctor_id = $doctor_id");
+        $results = DB::select("SELECT * FROM appointments WHERE doctor_id = $doctor_id order by date DESC");
         $user_table = DB::select("SELECT * FROM users");
         //dd($results);
         $patient_name = Array();

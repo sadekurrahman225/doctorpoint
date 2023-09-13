@@ -23,13 +23,15 @@ class DoctorListController extends Controller
     }
 
 
-    function get_appintment($id)
+    function get_appintment(Request $req)
     {
-        //dd(5);
+        //dd($req);
         $patient_id = auth()->user()->id;
-        $doctor_id = $id;
+        $doctor_id = $req->id;
+        //$date = strtotime($req->date);
+        //$date = date("Y-m-d", strtotime($req->date));
 
-        DB::insert("INSERT INTO appointments (doctor_id, patient_id,status) VALUES ($doctor_id,$patient_id,1)");
+        DB::insert("INSERT INTO appointments (doctor_id, patient_id,date,status) VALUES ($doctor_id,$patient_id,STR_TO_DATE('$req->date', '%Y-%m-%d'),1)");
 
         return view('patient.dashboard');
     }

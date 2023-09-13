@@ -22,6 +22,7 @@
                                       <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Actions</th>
                                        
@@ -42,6 +43,7 @@
                                     <tr class="odd gradeX">
                                         <td>{{$i}}</td>
                                         <td>{{$patient_name[$row->patient_id]}}</td>
+                                        <td><input type="date" id="date" name="date" value="{{$row->date}}" readonly ></td>
                                         <td>{{$status[$row->status]}}</td>
                                         {{-- <td class="center"> </td> --}}
                                         <td><a href="{{url('d-appointment-list-confirm',$row->id)}}">Confirm</a>||

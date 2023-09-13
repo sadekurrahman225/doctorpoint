@@ -21,6 +21,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Depertment</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Action</th>
                                         <th scope="col">Details</th>
                                       </tr>
@@ -33,7 +34,13 @@
                                             <th scope="row">{{$i}}</th>
                                             <td>{{$row->name}}</td>
                                             <td>Medicine</td>
-                                            <td><a href="{{url('get_appintment',$row->id)}}">Get Appointment</a> </td>
+                                            <form action="{{url('get_appintment')}}" method="get">
+                                                <input type="hidden" name="id" value="{{$row->id}}">
+                                                <td><input type="date" id="date" name="date" value="" ></td>
+                                                {{-- <td><a href="{{url('get_appintment',$row->id)}}">Get Appointment</a> </td> --}}
+                                                <td><button type="submit">Get Appointment</button> </td>
+                                            </form>
+                                            
                                             {{-- <td>Win 95+</td>
                                             <td class="center"> 4</td> --}}
                                             <td><a href="{{url('doctor_profile',$row->id)}}">View Profile</a></td>
